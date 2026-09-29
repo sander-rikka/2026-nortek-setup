@@ -1,0 +1,37 @@
+campaign:
+  start: "2026-10-01T12:00:00Z"
+  end: "2026-10-06T12:00:00Z"
+  water_depth_m: 22.5
+  head_height_above_bottom_m: 0.65
+  lat: 59.509
+  lon: 24.654
+  surface_margin_m: 0.0
+
+nortek:
+  # Supply a deploy file exported from your own Signature500 workflow.
+  template: my_signature500_reference.deploy
+  output_dir: campaign_output
+
+echo:
+  interval_min: 30
+  duration_min: 10
+  phase_resolution_sec: 1
+
+current:
+  enabled: true
+  # Null values inherit the echo interval and duration.
+  interval_min: null
+  duration_min: null
+
+sentinel:
+  padding_min: 0
+  collocation_coverage_mode: point
+  lookback_days: 730
+  pattern_min_events: 3
+  pattern_max_mad_min: 30
+  refresh_data: false
+  ensure_coverage: false
+  allow_predicted_overrides: false
+
+runtime:
+  offline: false
